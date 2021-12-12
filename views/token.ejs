@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Page </title>
+
+
+<style>
+
+* {
+			box-sizing: border-box;
+	}
+
+	body {
+			margin: 30px;
+
+	}
+
+	.confirmation
+	{
+		width: 700px;
+		margin: 0 auto;
+		font-family: Tahoma, Geneva, sans-serif;
+
+border-radius: 5px;
+background-color: #BFC9CA;
+padding: 50px;
+	}
+
+	h1{
+		color:#154360
+	}
+
+	.conf
+	{
+		width: 600px;
+		margin: 0 auto;
+		font-family: Tahoma, Geneva, sans-serif;
+		border-radius: 5px;
+		background-color: #D6DBDF;
+		padding: 50px;
+	}
+
+</style>
+
+
+    </head>
+    <body>
+			<div class="confirmation">
+			<h1><center>Confirmation Message</center></h1>
+			<div class="conf">
+				<h2><center>Example Copy:</center></h2>
+
+<script>
+var fname=<%-t1%>;
+</script>
+					<p>Hello <%=t1%> (<%=t2%>), <br>Please have a look at the description of your complaint. <br><p> Also please go through the solutions for frequently asked questions in the below provided link and see if u can get solution there..!!</p>
+    <h4>UserName : <%=t1%></h4>
+    <h4>Email : <%=t2%></h4>
+    <h4>Subject : <%=t3%></h4>
+    <h4>Complaint : <%=t4%></h4>
+		<img src= "uploads/<%=img%>" onerror="this.style.display = 'none';" alt="Flowers in Chania" width="300" height="300"><br><br>
+    <script>myFunction();</script>
+			Find a solution here?<button onclick= "location.href= '/find';" id="myButton1" class="fload-right submit-button">FAQ's</button><br><br>
+			Ready to submit?<button id="myButton" onclick="location.href='cmpform1';" class="float-left submit-button" >Submit</button>
+	</div>
+	</div>
+    </body>
+    </html>

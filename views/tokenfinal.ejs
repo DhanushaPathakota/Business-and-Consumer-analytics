@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Page </title>
+
+
+<style>
+
+* {
+			box-sizing: border-box;
+	}
+
+	body {
+			margin: 30px;
+
+	}
+
+	.confirmation
+	{
+		width: 700px;
+		margin: 0 auto;
+		font-family: Tahoma, Geneva, sans-serif;
+
+border-radius: 5px;
+background-color: #BFC9CA;
+padding: 50px;
+	}
+
+	h1{
+		color:#154360
+	}
+
+	.conf
+	{
+		width: 600px;
+		margin: 0 auto;
+		font-family: Tahoma, Geneva, sans-serif;
+		border-radius: 5px;
+		background-color: #D6DBDF;
+		padding: 50px;
+	}
+
+</style>
+</head>
+  <body>
+    <div class="confirmation">
+    <h1><center>Status of the complaint:</center></h1>
+    <div class="conf">
+    <%list.forEach(function(it){%>
+      <h2>Status:<%=it.status%></h2>
+      <h3>Details of complaint:</h3>
+      <h4>Name  :  <%=it.fname%></h4>
+      <h4>Email :  <%=it.email%></h4>
+      <h4>Subjct:  <%=it.subject%></h4>
+      <h4>Status:<%=it.status%></h4>
+      <h4>Date:<%=it.date%></h4><br><br>
+      <%});%>
+  <button onclick="location.href = '/';" id="myButton" class="float-left submit-button" >Home</button>
+</div>
+</div>
+    </body>
+    </html>

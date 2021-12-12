@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body,html {
+height:100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-image {
+  /* The image used */
+
+  background-image: url(uploads/ad2.jpg);
+
+  /* Add the blur effect */
+  filter: blur(12px);
+  -webkit-filter: blur(12px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+/* Style the content */
+.content {
+
+
+  padding: 50px; background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0); /* Black w/opacity/see-through */
+  color: black;
+  font-weight: bold;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+
+
+  text-align:center;
+  font-size:30px;/* Should be removed. Only for demonstration */
+}
+
+
+.button1 {
+margin:10px;
+ cursor: pointer;
+border-radius: 12px;
+height: 70px;
+width: 230px;
+background-color:#D3D3D3;color:black;
+font-size:20px; /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+          /* make the cursor like hovering over an <a> element */
+    height: 70px;
+        /* make this the size of your image */
+    padding-left: 70px;     /* make text start to the right of the image */
+    vertical-align: left;
+text-align:right;
+border: 1.5px solid #555555;
+
+box-shadow: 0 4px #999;
+}
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+</style>
+</head>
+<body>
+</body>
+  <script type="text/javascript">
+  function submitfunction(i)
+  {
+    if(i==1){
+      document.form.method="post"
+      document.form.action="/checkrating";
+    }
+    if(i==2){
+      document.form.method="post"
+      document.form.action="/checktime";
+    }
+    if(i==3){
+      document.form.method="post"
+      document.form.action="/check";
+    }
+    document.form.submit()
+  }
+  </script>
+
+<div class="bg-image"></div>
+
+<div class="content">
+  <form name="form" method="GET">
+    <input type="button" value="check the rating" class="button1"  onClick="submitfunction(1)">
+    <input type="button" value="check the time taken" class="button1"  onClick="submitfunction(2)">
+    <input type="button" value="check" class="button1"  onClick="submitfunction(3)">
+  </form>
+</div>
+
+
+
+</html>

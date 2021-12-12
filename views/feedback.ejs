@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>form </title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 30px;
+
+		}
+
+		h1 {
+			color: #ffffff;
+		}
+
+		.complaint-form {
+			width: 800px;
+
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+			border-radius: 5px;
+			background-color: #34495E;
+			padding: 50px;
+
+		}
+
+		.comp-1 {
+			background-color: #AAB7B8
+		}
+
+		::placeholder {
+			color: #34495E
+		}
+
+		.complaint-form input[type="password"],
+		.complaint-form input[type="text"],
+		.complaint-form input[type="email"],
+
+		textarea {
+			width: 100%;
+			padding: 15px;
+			margin-bottom: 15px;
+			box-sizing: border-box;
+			border-bottom: 2px thin #34495E;
+
+
+			border-radius: 10px;
+			;
+
+		}
+
+		.dropbtn {
+			background-color: #AAB7B8;
+			color: white;
+			font-size: 16px;
+			width: 100%;
+			padding: 15px;
+			margin-bottom: 15px;
+			box-sizing: border-box;
+			border-bottom: 2px thin black;
+			border-radius: 10px;
+			;
+
+
+		}
+
+		.complaint-form input[type="submit"] {
+			width: 30%;
+			padding: 15px;
+			background-color: #34495E;
+
+
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+
+			margin: auto;
+
+
+		}
+
+		.ab {
+			margin: 0 auto;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="complaint-form">
+		<h1>
+			<center></center>
+		</h1>
+		<div class="comp-1">
+			<form action="feedback" method="post">
+				<div class="dropbtn">
+					<label for="type">Choose the type of feedback:</label>
+					<select name="type" onchange="if (this.value=='requirements'){this.form['requirements'].style.visibility='visible'}else {this.form['requirements'].style.visibility='hidden'};">
+						<option value="customer not present">customer not present</option>
+						<option value="cannot do job">cannot do job</option>
+						<option value="requirements">requirements</option>
+						<option value="others">others</option>
+					</select>
+				</div>
+				<input type="text" name="requirements" placeholder="Requirements" style="visibility:hidden;"><br>
+				<textarea name="details" placeholder="Write your Feedback in detail" cols="50" rows="10"></textarea><br>
+				<div class="ab"> <input type="submit"><br><br></div>
+			</form>
+		</div>
+	</div>
+
+
+	</form>
+
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+	body {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-template-rows: 5em 30em 10em;
+  grid-gap: 1em;
+	zoom:0.75;
+}
+
+header,
+footer {
+  grid-column: 1 / span 2;
+}
+
+/* Demo Specific Styles */
+body {
+  margin: 0 auto;
+
+  padding: 1em 0;
+}
+
+header,
+
+footer {
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+aside{
+	background: #eaeaea;
+	text-align: center;
+	padding:inherit;
+}
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+table, td, th {
+  border: 1px solid #ddd;
+  text-align: center;
+
+
+}
+
+table.a {
+  table-layout: auto;
+  border-collapse: collapse;
+  empty-cells: hide;
+  border: 1px solid #ddd;
+  text-align: center;
+
+}
+table.b{
+  table-layout: auto;
+  border-collapse: collapse;
+  empty-cells: hide;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+th,td{
+  padding: 15px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+tr.b:nth-child(even) {background-color: #f2f2f2;}
+</style>
+</head>
+<body>
+
+
+<main>
+
+  <table style="width:80%" class="a">
+    <h3>Complaints dealt in this week</h3><br>
+    <tr class="a">
+      <th class="a">Employee Id</th>
+      <th class="a">Task received</th>
+      <th class="a">Rating Received</th>
+      <th class="a">Time taken to complete the task (in hours)</th>
+    </tr>
+
+
+      <%ids1.forEach(function(it,i){%>
+
+         <tr class="a">
+          <td class="a"><%=it%></td>
+      <td class="a"><%=comp1[i]%></td>
+      <td class="a"><%=rating1[i]%></td>
+      <td class="a"><%=diff1[i]%></td>
+  </tr>
+      <%});%>
+
+
+</table>
+
+
+  <table style="width:80%" class="b">
+    <br><h3>Task progress of each employee</h3><br>
+    <tr class="b">
+      <th class="b">Employee name</th>
+      <th class="b">Tasks completed</th>
+      <th class="b">Tasks in progress</th>
+      <th class="b">Tasks rejected</th>
+    </tr>
+
+      <%ids.forEach(function(it,i){%>
+
+         <tr class="b">
+          <td class="b"><%=names[i]%></td>
+      <td class="b"><%=completed[i]%></td>
+      <td class="b"><%=nc[i]%></td>
+      <td class="b"><%=rejected[i]%></td>
+  </tr>
+      <%});%>
+
+
+
+  </table>
+
+</main>
+
+</body>
+
+
+</html>

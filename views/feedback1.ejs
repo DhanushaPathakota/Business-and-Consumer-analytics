@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>form </title>
+		<style>
+
+			* {
+						box-sizing: border-box;
+            border-radius: 5px;
+
+				}
+
+			body {
+					margin: 30px;
+
+			}
+
+			h1{
+				color: #ffffff;
+			}
+
+			.complaint-form
+			{
+				width: 810px;
+				height: 810px;
+				margin: 0 auto;
+				font-family: Tahoma, Geneva, sans-serif;
+			  border-radius: 5px;
+			  background-color: #34495E ;
+			  padding: 50px;
+
+			}
+
+
+
+
+			.comp-1
+			{
+				background-color:#AAB7B8
+
+
+			}
+
+			::placeholder
+			{
+				color: #34495E
+			}
+
+			.complaint-form input[type="password"],
+			.complaint-form input[type="text"],
+      .complaint-form input[type="url"],
+      .complaint-form input[type="number"],
+			.complaint-form input[type="email"],
+			textarea
+			 {
+					width: 100%;
+					padding: 15px;
+					margin-bottom: 15px;
+					box-sizing:border-box;
+	        border-bottom: 2px thin #34495E;
+
+
+		      border-radius:10px;;
+
+			}
+
+			.complaint-form input[type="submit"]
+			{
+				width: 30%;
+				padding: 15px;
+				background-color: #34495E;
+
+
+				cursor: pointer;
+				font-weight: bold;
+				color: #ffffff;
+
+				margin: auto;
+  width: 30%;
+
+
+			}
+
+			.ab{
+				margin: 0 auto;
+				text-align:center;
+			}
+			</style>
+  </head>
+  <body>
+    <div class="complaint-form">
+      <h1><center>complaint form </center></h1>
+			<div class="comp-1">
+                <form action="/rating" method="POST">
+                    <p>Please rate the quality of service you received</p>
+                    <input type="radio" id="1" name="rate" value="1"/>
+                    <label for="1">1</label>
+                  <input type="radio" id="2" name="rate" value="2"/>
+                    <label for="2">2</label>
+                    <input type="radio" id="3" name="rate" value="3"/>
+                    <label for="3">3</label>
+                    <input type="radio" id="4" name="rate" value="4"/>
+                    <label for="4">4</label>
+                    <input type="radio" id="5" name="rate" value="5"/>
+                    <label for="5">5</label>
+                  
+                    <br> <br>
+     
+		<textarea name="review" placeholder="review" cols="50" rows="10" required></textarea><br>
+		<input type="hidden" name="cmp" value='<%=cmpno%>' />
+       
+       <div class="ab">  <input type="submit"><br><br></div>
+
+
+      
+      </form>
+		</div>
+    </div>
+  </body>
+</html>

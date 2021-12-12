@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Page </title>
+
+
+<style>
+
+* {
+			box-sizing: border-box;
+	}
+
+	body {
+			margin: 30px;
+
+	}
+
+	.confirmation
+	{
+		width: 700px;
+		margin: 0 auto;
+		font-family: Tahoma, Geneva, sans-serif;
+
+border-radius: 5px;
+background-color: #BFC9CA;
+padding: 50px;
+	}
+
+	h1{
+		color:#154360
+	}
+
+	.conf
+	{
+		width: 600px;
+		margin: 0 auto;
+		font-family: Tahoma, Geneva, sans-serif;
+		border-radius: 5px;
+		background-color: #D6DBDF;
+		padding: 50px;
+	}
+
+</style>
+
+
+    </head>
+    <body>
+			<div class="confirmation">
+			<h1><center>Success</center></h1>
+			<div class="conf">
+				<h2><center></center></h2>
+
+<script>
+var fname=<%-t1%>;
+</script>
+					<p>Hello <%=t1%> (<%=t2%>), <br>Thanks for contacting Adithya Systems and Services. Your complaint has been registered successfully</p>
+    Use the below mentioned tracking ID to get to know the status of your complaint.
+		<br><br><h2>Tracking ID: <%=t3%><h2><br>
+    <script>myFunction();</script>
+<br>
+		<button id="myButton" onclick="location.href='/';" class="float-left submit-button" >Home</button>
+	</div>
+	</div>
+    </body>
+    </html>

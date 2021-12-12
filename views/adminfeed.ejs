@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 15px;
+}
+
+/* Track */
+
+  ::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          border-radius: 10px;
+
+        }
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 320px;
+  border: 5px solid white;
+}
+.button {
+  margin: 1%;
+  position: absolute;
+  font-size: 16px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.btn {
+  margin: 1%;
+  position: absolute;
+  font-size: 16px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%%;
+  opacity: 0.9;
+}
+.button1 {font-size: 16px;}
+.button2 {font-size: 16px;}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<h2>Employee Feedbacks</h2>
+
+<div class="row">
+  <div class="column" style="background-color:#cbda;overflow-y:auto;">
+    <h2>customer not present</h2>
+
+      <%cnp.forEach(function(it,i){%>
+        <br>
+        <h3>emp id  :  <%=it.empid%></h3>
+        <h3>cmp no :  <%=it.cmpno%></h3>
+        <h3>Details:<%=it.details%></h3>
+  <%});%>
+
+  </div>
+  <div class="column" style="background-color:#bcad;overflow-y:auto;">
+    <h2>Requirments</h2>
+
+      <%reqts.forEach(function(it,i){%>
+        <br>
+        <h3><u>Requirment <%=i%>:</u></h3>
+        <h3>emp id  :  <%=it.empid%></h3>
+        <h3>cmp no :  <%=it.cmpno%></h3>
+        <h3>Details:<%=it.details%></h3>
+        <h3>Requirments:<%=it.requirements%></h3>
+          <%});%>
+
+  </div>
+  <div class="column" style="background-color:#abcd;overflow-y:auto;">
+    <h2>Job cannot be done</h2>
+    <%cdj.forEach(function(it,i){%>
+      <h3><u>Job that cannot be done :</u></h3>
+      <h3>emp id  :  <%=it.empid%></h3>
+      <h3>cmp no :  <%=it.cmpno%></h3>
+      <h3>Details:<%=it.details%></h3>
+        <%});%>
+  </div>
+  <div class="column" style="background-color:#accd;overflow-y:auto;">
+    <h2>Others</h2>
+    <%cdj.forEach(function(it,i){%>
+      <h3><u>Others <%=i%>:</u></h3>
+      <h3>emp id  :  <%=it.empid%></h3>
+      <h3>cmp no :  <%=it.cmpno%></h3>
+      <h3>Details:<%=it.details%></h3>
+        <%});%>
+  </div>
+</div>
+<div class="button" >
+<h1>Click here to change employee for a complain or cancel a complain</h1>
+<button class="btn" onclick="location.href='changeemp'" type="button">click here  </button><br><br>
+</div>
+</body>
+</html>

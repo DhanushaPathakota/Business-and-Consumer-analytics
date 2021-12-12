@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+zoom:0.75;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+
+  height: 100px;
+  float: left;
+  width: 36%;
+  padding: 10px;
+}
+
+.column1 {
+  float: left;
+  width: 20%;
+  padding: 10px;
+}
+
+
+
+th, td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 15px;
+}
+.con{
+
+left: 0;
+  width: 55%;
+  padding: 10px;
+}
+/* Full-width input fields */
+input[type=text], input[type=number] {
+
+
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%%;
+  opacity: 0.9;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+    overflow-y: auto;
+}
+
+
+/* Set a grey background color and center the text of the "sign in" section */
+</style>
+</head>
+<body>
+
+<form action="changeemp" method="POST">
+  <div class="row">
+
+
+  <div class="column">
+    <h1>Change a complaint to new Employee</h1>
+    <hr>
+    <label for="cmpno"><b>Cmp no</b></label>
+    <input type="number" placeholder="Complain number" name="cmpno" required>
+<br>
+    <label for="empname"><b>Assign to:</b></label>
+    <input type="text" placeholder="new Emp name" name="empname" required>
+
+  </hr>
+<br>
+    <button type="submit" class="registerbtn">change</button>
+  </div>
+
+</form>
+
+
+<div class="column1">
+<h2>Employee's who are available </h2><br>
+    <table id="myTable"  class="a">
+
+        <tr>
+          <th>Name</th>
+          <th>Id</th>
+        </tr>
+
+
+          <%res.forEach(function(it,i){%>
+
+      <tr>
+
+          <td><%=it.name%></td>
+          <td><%=it.id%></td>
+      </tr>
+          <%});%>
+
+
+</table>
+</div>
+
+  <div class="column">
+<h2>Complaints in Progress</h2><br>
+      <table id="myTable"  style=" height: 200px; overflow-y:auto;"class="a">
+
+          <tr>
+            <th>Client Name</th>
+            <th>complaint No</th>
+            <th>Subject</th>
+
+            <th>employeeid</th>
+            <th>Details</th>
+            <th>Status</th>
+          </tr>
+
+
+            <%result.forEach(function(it,i){%>
+
+        <tr>
+
+            <td><%=it.fname%></td>
+            <td><%=it.cmpno%></td>
+            <td><%=it.subject%></td>
+
+            <td><%=it.id%></td>
+            <td><%=it.cmp%></td>
+            <td><%=it.status%></td>
+        </tr>
+            <%});%>
+          </table>
+  </div>
+  </div>
+  <form action="cancelcomplain" method="POST">
+  <div class="con">
+    <h1><br>OR</br></h1>
+    <h1>cancel a complaint</h1>
+    <hr>
+    <label for="cmpno"><b>Cmp no</b></label>
+    <input type="number" placeholder="Complain number" name="cmpno" required>
+
+  </hr>
+<br>
+    <button type="submit" class="registerbtn">cancel</button>
+  </div>
+
+</form>
+
+</body>
+</html>

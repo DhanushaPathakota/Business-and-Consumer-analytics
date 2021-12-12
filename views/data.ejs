@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>form </title>
+		<style>
+
+			* {
+						box-sizing: border-box;
+				}
+
+			body {
+					margin: 30px;
+
+			}
+
+			h1{
+				color: #ffffff;
+			}
+
+			.complaint-form
+			{
+				width: 800px;
+				height: 700px;
+				margin: 0 auto;
+				font-family: Tahoma, Geneva, sans-serif;
+			  border-radius: 5px;
+			  background-color: #34495E ;
+			  padding: 50px;
+
+			}
+
+			.comp-1
+			{
+				background-color:#AAB7B8
+			}
+
+			::placeholder
+			{
+				color: #34495E
+			}
+
+			.complaint-form input[type="password"],
+			.complaint-form input[type="text"],
+			.complaint-form input[type="email"],
+			textarea
+			 {
+					width: 100%;
+					padding: 15px;
+					margin-bottom: 15px;
+					box-sizing:border-box;
+	        border-bottom: 2px thin #34495E;
+
+
+		      border-radius:10px;;
+
+			}
+
+			.complaint-form input[type="submit"]
+			{
+				width: 30%;
+				padding: 15px;
+				background-color: #34495E;
+
+
+				cursor: pointer;
+				font-weight: bold;
+				color: #ffffff;
+
+				margin: auto;
+  width: 30%;
+
+
+			}
+
+			.ab{
+				margin: 0 auto;
+				text-align:center;
+			}
+			</style>
+  </head>
+  <body>
+    <div class="complaint-form">
+      <h1><center>Complaint-Form of <%=user%></center></h1>
+			<div class="comp-1">
+      <form action="cmpform" method="POST">
+        <br><input type="text" name="fname" placeholder="First Name" required><br>
+        <input type="email" name="email" placeholder="Email-ID" required><br>
+        <input type="text" name="subject" placeholder="Subject" required><br>
+        <textarea name="cmp" placeholder="Write your Complaint in detail" cols="50" rows="10" ></textarea><br>
+			  <!--Attachment?<input type="file" NAME="attachedfile" MAXLENGTH=200 ALLOW="text/*" placeholder="Attachment"><br><br>-->
+      <div class="ab">  <input type="submit"><br><br></div>
+      </form>
+		</div>
+    </div>
+  </body>
+</html>

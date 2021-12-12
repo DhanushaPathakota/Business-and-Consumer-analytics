@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<style>
+body {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-template-rows: 5em 30em 10em;
+  grid-gap: 1em;
+}
+
+header,
+footer {
+  grid-column: 1 / span 2;
+}
+
+/* Demo Specific Styles */
+body {
+  margin: 0 auto;
+
+  padding: 1em 0;
+}
+
+header,
+
+footer {
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+aside{
+	background: #eaeaea;
+	text-align: center;
+	padding:inherit;
+}
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+.datess{
+	position: relative;
+	float: left;
+	left:80%;
+}
+.si{
+
+
+    color:grey;
+position:absolute;
+    right:22%;
+    top:2.7%;
+    width:30%;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+table, td, th {
+  border: 1px solid #ddd;
+  text-align: left;
+
+}
+
+table {
+  table-layout: auto;
+  border-collapse: collapse;
+  empty-cells: hide;
+}
+
+
+th, td {
+  padding: 15px;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+</style>
+</head>
+<body>
+<main>
+<div class="dropdown">
+	<button onclick="myfunction()" class="dropbtn">Filter</button>
+	<div id="myDropdown" class="dropdown-content">
+	  <a href="complaints_in_progress">complaints_in_progress</a>
+      <a href="completed_complaints">completed_complaints</a>
+      <a href="listofcomplaint">Total_complaints_received</a>
+
+	</div>
+  </div>
+
+  <script>
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function myfunction() {
+	document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+	if (!event.target.matches('.dropbtn')) {
+	  var dropdowns = document.getElementsByClassName("dropdown-content");
+	  var i;
+	  for (i = 0; i < dropdowns.length; i++) {
+		var openDropdown = dropdowns[i];
+		if (openDropdown.classList.contains('show')) {
+		  openDropdown.classList.remove('show');
+		}
+	  }
+	}
+  }
+  </script>
+	<div style="position:relative; float:right;">
+		<input type="text" name="daterange" value="" />
+<p id=demo></p>
+	<script>
+	$(function() {
+	  $('input[name="daterange"]').daterangepicker({
+	    opens: 'right'
+
+	  }, function(start, end, label) {
+			var d=start.format('DD/MM/YYYY')+'-'+end.format('DD/MM/YYYY')
+
+	      document.getElementById("demo").innerHTML = d;
+	  });
+	});
+	</script>
+
+
+		</div>
+<div class="si">
+    <br><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for empid.." title="Type in a id"><br><br><br>
+
+
+
+    </div>
+
+<table id="myTable" style="width:80%" class="a">
+
+    <tr>
+      <th>Name</th>
+      <th>Subject</th>
+      <th>complaint</th>
+      <th>employeeid</th>
+      <th>date_start</th>
+      <th>status</th>
+    </tr>
+
+
+      <%fname.forEach(function(it,i){%>
+
+         <tr>
+          <td><%=it%></td>
+      <td><%=subject[i]%></td>
+      <td><%=cmp[i]%></td>
+      <td><%=id[i]%></td>
+      <td><%=date_start[i]%></td>
+      <td><%=status[i]%></td>
+  </tr>
+      <%});%>
+
+    </table>
+    <script>
+        function myFunction() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[3];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
+        }
+        </script>
+</main>
+</body>
+</html>
